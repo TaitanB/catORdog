@@ -1,13 +1,13 @@
 import { Component } from 'react';
-import { fetchBreeds, fetchCatByBreed } from './api';
-import { Cat } from './cat';
+import { fetchBreeds, fetchPetByBreed } from './api';
+import { Pet } from './Pet';
 import { GlobalStyle } from './GlobalStyle';
 import { BreedSelect } from './BreedSelect';
 
 export class App extends Component {
   state = {
     breeds: [],
-    cat: null,
+    pet: null,
     error: null,
   };
 
@@ -25,8 +25,8 @@ export class App extends Component {
 
   selectBreed = async breedId => {
     try {
-      const cat = await fetchCatByBreed(breedId);
-      this.setState({ cat });
+      const pet = await fetchPetByBreed(breedId);
+      this.setState({ pet });
     } catch (e) {
       this.setState({
         error:
@@ -36,13 +36,13 @@ export class App extends Component {
   };
 
   render() {
-    const { breeds, cat, error } = this.state;
+    const { breeds, pet, error } = this.state;
 
     return (
       <>
         <BreedSelect breeds={breeds} onSelect={this.selectBreed} />
         {error && <div>{error}</div>}
-        {cat && <Cat cat={cat} />}
+        {pet && <Pet pet={pet} />}
         <GlobalStyle />
       </>
     );
