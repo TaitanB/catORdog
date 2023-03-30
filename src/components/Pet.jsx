@@ -13,7 +13,7 @@ export const Dog = ({ pet: { url, breeds } }) => {
   console.log(breeds[0].height);
 
   return (
-    <div style={{ display: 'flex', gap: 16 }}>
+    <div>
       <img src={url} width="480" alt="dog" />
       <div>
         <b>Breed: {name}</b>
@@ -64,7 +64,7 @@ export const Cat = ({ pet: { url, breeds } }) => {
   } = breeds[0];
 
   return (
-    <div style={{ display: 'flex', gap: 16 }}>
+    <div>
       <img src={url} width="480" alt="cat" />
       <div>
         <b>Breed: {name}</b>

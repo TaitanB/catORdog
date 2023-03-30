@@ -117,7 +117,7 @@ export class App extends Component {
           <button onClick={this.selectDog}>Dog</button>
         </div>
         {/* <Buttons onClick={(this.selectCat, this.selectDog)} /> */}
-        {this.state.petType !== null && (
+        {this.state.petType !== '' && (
           <BreedSelect breeds={breeds} onSelect={this.selectBreed} />
         )}
         {error && <div>{error}</div>}
