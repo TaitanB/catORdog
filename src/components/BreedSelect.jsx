@@ -7,6 +7,10 @@ export const BreedSelect = ({ breeds, onSelect }) => {
   }));
 
   return (
-    <Select options={options} onChange={option => onSelect(option.value)} />
+    <Select
+      placeholder={'Select the breed of pet'}
+      options={options}
+      onChange={option => onSelect(option.value)}
+    />
   );
 };
