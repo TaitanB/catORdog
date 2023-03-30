@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { fetchBreeds, fetchPetByBreed } from './api';
+import { fetchBreeds, fetchPetByBreed, onFetch } from './api';
 import { Dog, Cat } from './Pet';
 import { BreedSelect } from './BreedSelect';
 import { Loader } from './Loader';
@@ -19,10 +19,36 @@ export class App extends Component {
     error: null,
     petType: '',
     isLoading: false,
+    random_image: null,
   };
 
   componentDidMount() {
     console.log('App componentDidMount');
+
+    onFetch()
+      .then(hits => {
+        // Генеруємо випадковий індекс для масиву
+        const random_index = Math.floor(Math.random() * hits.length);
+        console.log(random_index);
+        // Отримуємо картинку з об'єкту, що відповідає випадковому індексу
+        const random_image = hits[random_index];
+        console.log(random_image);
+        // Отримуємо айді картинки з об'єкту
+        const random_id = random_image.id;
+        console.log(random_id);
+        // Отримуємо URL картинки з об'єкту
+        const random_image_url = random_image.largeImageURL;
+        console.log(random_image_url);
+
+        this.setState({ random_image: random_image_url });
+      })
+      .catch(error =>
+        this.setState({
+          error: 'Sorry, something went wrong...',
+        })
+      );
+
+    console.log(this.state.random_image);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -111,20 +137,78 @@ export class App extends Component {
     const { breeds, pet, error } = this.state;
 
     return (
-      <>
-        <div>
-          <button onClick={this.selectCat}>Cat</button>
-          <button onClick={this.selectDog}>Dog</button>
+      <div
+        style={{
+          backgroundImage: `url(${this.state.random_image})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundColor: 'rgba(150, 220, 215, 0.5)',
+          // opacity: '0.6',
+          width: '100%',
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '30px',
+          alignItems: 'center',
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            gap: '30px',
+            justifyContent: 'center',
+            padding: '30px',
+            marginBottom: '50px',
+            // width: '480px',
+          }}
+        >
+          <button
+            style={{
+              color: '#e0eee3',
+              backgroundColor: '#05300d',
+              padding: '30px 50px',
+            }}
+            onClick={this.selectCat}
+          >
+            Cat
+          </button>
+          <button
+            style={{
+              color: '#e0eee3',
+              backgroundColor: '#05300d',
+              padding: '30px 50px',
+            }}
+            onClick={this.selectDog}
+          >
+            Dog
+          </button>
         </div>
-        {/* <Buttons onClick={(this.selectCat, this.selectDog)} /> */}
-        {this.state.petType !== '' && (
-          <BreedSelect breeds={breeds} onSelect={this.selectBreed} />
-        )}
-        {error && <div>{error}</div>}
-        {pet && this.state.petType === 'dog' && <Dog pet={pet} />}
-        {pet && this.state.petType === 'cat' && <Cat pet={pet} />}
-        {this.state.isLoading === true && <Loader />}
-      </>
+        <div
+          style={{
+            backgroundColor: 'rgb(206, 238, 233)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '30px',
+            justifyContent: 'center',
+            // width: '480px',
+          }}
+        >
+          {/* <Buttons onClick={(this.selectCat, this.selectDog)} /> */}
+          {this.state.petType !== '' && (
+            <BreedSelect
+              style={{ width: '480px', marginBottom: '50px' }}
+              breeds={breeds}
+              onSelect={this.selectBreed}
+            />
+          )}
+          {error && <div>{error}</div>}
+          {pet && this.state.petType === 'dog' && <Dog pet={pet} />}
+          {pet && this.state.petType === 'cat' && <Cat pet={pet} />}
+          {this.state.isLoading === true && <Loader />}
+        </div>
+      </div>
     );
   }
 }

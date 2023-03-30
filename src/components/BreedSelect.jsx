@@ -15,6 +15,14 @@ export class BreedSelect extends Component {
   render() {
     return (
       <Select
+        styles={{
+          control: (baseStyles, state) => ({
+            ...baseStyles,
+            backgroundColor: state.isFocused ? '#cbf3cb' : ' #f3cbcb',
+            color: '#de1f1f',
+          }),
+        }}
+        // clasName={select}
         value={''}
         placeholder={'Select the breed of pet'}
         options={this.props.breeds.map(breed => {

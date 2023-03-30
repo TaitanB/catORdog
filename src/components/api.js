@@ -39,3 +39,16 @@ export const fetchPetByBreed = async (baseUrl, apiKey, breedId) => {
 //   });
 //   return response.data[0];
 // };
+
+export const onFetch = async () => {
+  const API_KEY = '33528220-6f12bec756615243821cbd5de';
+
+  try {
+    const response = await axios.get(
+      `https://pixabay.com/api/?q=cat%20dog&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=200`
+    );
+    return response.data.hits;
+  } catch (error) {
+    console.log('Sorry, something went wrong...', error);
+  }
+};
