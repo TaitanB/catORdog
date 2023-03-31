@@ -19,7 +19,7 @@ export class BreedSelect extends Component {
           control: (baseStyles, state) => ({
             ...baseStyles,
             backgroundColor: state.isFocused ? '#cbf3cb' : ' #f3cbcb',
-            color: '#de1f1f',
+            width: '1050px',
           }),
         }}
         // clasName={select}

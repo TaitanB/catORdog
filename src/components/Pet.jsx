@@ -16,25 +16,39 @@ export const Dog = ({ pet: { url, breeds } }) => {
     <div
       style={{
         padding: '30px',
-        display: 'flex',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(2, 1fr)',
         gap: '30px',
-        justifyContent: 'center',
-        width: '50%',
+        alignItems: 'center',
+        width: '990px',
+        // borderRadius: '30px',
       }}
     >
-      <img src={url} width="480" alt="dog" />
+      <img src={url} width="480" alt="dog" style={{ borderRadius: '30px' }} />
       <div>
-        <b>Breed: {name}</b>
-        <p>Breed for: {bred_for}</p>
-        <p>Breed group: {breed_group}</p>
-        <p>Life span: {life_span}</p>
-        <p>Temperament: {temperament}</p>
-        <p>Origin: {origin}</p>
+        <h2>Breed: {name}</h2>
         <p>
-          Height: {height.imperial} in., {height.metric} m.
+          <b>Breed for:</b> {bred_for ? bred_for : '?'}
         </p>
         <p>
-          Weight: {weight.imperial} pound, {weight.metric} kg.
+          <b>Breed group:</b> {breed_group ? breed_group : '?'}
+        </p>
+        <p>
+          <b>Life span: </b> {life_span ? life_span : '?'}
+        </p>
+        <p>
+          <b>Temperament:</b> {temperament ? temperament : '?'}
+        </p>
+        <p>
+          <b>Origin:</b> {origin ? origin : '?'}
+        </p>
+        <p>
+          <b>Height:</b> {height.imperial ? height.imperial : '?'} in.,{' '}
+          {height.metric ? height.metric : '?'} сm.
+        </p>
+        <p>
+          <b>Weight:</b> {weight.imperial ? weight.imperial : '?'} pound,{' '}
+          {weight.metric ? weight.metric : '?'} kg.
         </p>
       </div>
     </div>
@@ -43,28 +57,19 @@ export const Dog = ({ pet: { url, breeds } }) => {
 
 export const Cat = ({ pet: { url, breeds } }) => {
   const {
-    cfa_url,
     child_friendly,
     description,
     dog_friendly,
     energy_level,
     grooming,
-    hairless,
     health_issues,
     hypoallergenic,
-    indoor,
     intelligence,
     life_span,
     name,
-    natural,
     origin,
-    rare,
-    rex,
-    short_legs,
     social_needs,
     stranger_friendly,
-    vcahospitals_url,
-    vetstreet_url,
     vocalisation,
     temperament,
     weight,
@@ -75,42 +80,80 @@ export const Cat = ({ pet: { url, breeds } }) => {
     <div
       style={{
         padding: '30px',
-        display: 'flex',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(2, 1fr)',
         gap: '30px',
-        justifyContent: 'center',
-        width: '50%',
+        alignItems: 'center',
+        width: '990px',
+        // borderRadius: '30px',
       }}
     >
-      <img src={url} width="480" alt="cat" />
+      <img src={url} width="480" alt="cat" style={{ borderRadius: '30px' }} />
       <div>
-        <b>Breed: {name}</b>
-        <p>Life span: {life_span}</p>
-        <p>Temperament: {temperament}</p>
+        <h2>Breed: {name}</h2>
         <p>
-          Weight: {weight.imperial} pound, {weight.metric} kg.
+          <b>Life span: </b> {life_span ? life_span : '?'} years
         </p>
-        <p>{cfa_url}</p>
-        <p>{child_friendly}</p>
-        <p>{description}</p>
-        <p>{dog_friendly}</p>
-        <p>{energy_level}</p>
-        <p>{grooming}</p>
-        <p>{hairless}</p>
-        <p>{health_issues}</p>
-        <p>{hypoallergenic}</p>
-        <p>{indoor}</p>
-        <p>{intelligence}</p>
-        <p>{natural}</p>
-        <p>{origin}</p>
-        <p>{rare}</p>
-        <p>{rex}</p>
-        <p>{short_legs}</p>
-        <p>{social_needs}</p>
-        <p>{stranger_friendly}</p>
-        <p>{vcahospitals_url}</p>
-        <p>{vetstreet_url}</p>
-        <p>{vocalisation}</p>
-        <p>{wikipedia_url}</p>
+        <p>
+          <b>Temperament:</b> {temperament ? temperament : '?'}
+        </p>
+        <p>
+          <b>Weight:</b> {weight.imperial ? weight.imperial : '?'} pound,{' '}
+          {weight.metric ? weight.metric : '?'} kg.
+        </p>
+        <p>
+          <b>Origin:</b> {origin ? origin : '?'}
+        </p>
+        <p>
+          <b>Description:</b> {description ? description : '?'}
+        </p>
+
+        <div
+          style={{
+            display: 'flex',
+            padding: '30px',
+            justifyContent: 'space-around',
+          }}
+        >
+          <ul>
+            <li>
+              Child friendly: <b>{child_friendly}</b>
+            </li>
+            <li>
+              Dog friendly: <b>{dog_friendly}</b>
+            </li>
+            <li>
+              Stranger friendly: <b>{stranger_friendly}</b>
+            </li>
+            <li>
+              Social needs: <b>{social_needs}</b>
+            </li>
+            <li>
+              Intelligence: <b>{intelligence}</b>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              Energy level: <b>{energy_level}</b>
+            </li>
+            <li>
+              Grooming: <b>{grooming}</b>
+            </li>
+            <li>
+              Health issues: <b>{health_issues}</b>
+            </li>
+            <li>
+              Hypoallergenic: <b>{hypoallergenic}</b>
+            </li>
+            <li>
+              Vocalisation: <b>{vocalisation}</b>
+            </li>
+          </ul>
+        </div>
+
+        <a href={wikipedia_url} target="_blank" rel="noopener noreferrer">
+          Read more on wikipedia
+        </a>
       </div>
     </div>
   );
