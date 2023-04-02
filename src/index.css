@@ -32,5 +32,44 @@ p {
 img {
   display: block;
   max-width: 100%;
-  height: auto;
+  max-height: 50vh;
+  /* height: auto; */
+}
+
+/* Стилі для react-select */
+
+/* .react-select__container {
+} */
+
+/* .react-select__control {
+  width: 1050px;
+  padding: 0 30px;
+  border-color: #8fa0c9;
+} */
+
+/* .react-select__menu {
+} */
+
+/* .react-select__menu-list {
+} */
+
+/* .react-select__menu-list > div:nth-child(even) {
+  background-color: rgba(203, 243, 203, 0.6);
+} */
+
+/* .react-select__option {
+  background-color: rgba(203, 243, 203, 0.6);
+} */
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1200;
 }

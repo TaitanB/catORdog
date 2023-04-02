@@ -18,12 +18,25 @@ export class BreedSelect extends Component {
         styles={{
           control: (baseStyles, state) => ({
             ...baseStyles,
-            backgroundColor: state.isFocused ? '#cbf3cb' : ' #f3cbcb',
+            backgroundColor: state.isFocused ? '#cbf3cb75' : ' #f3cbcb75',
+            borderRadius: '20px',
             width: '1050px',
+            padding: ' 0 30px',
+          }),
+          placeholder: (baseStyles, state) => ({
+            ...baseStyles,
+            color: state.isFocused ? '#05300d' : ' #640909',
+          }),
+          menu: baseStyles => ({
+            ...baseStyles,
+            backgroundColor: 'rgba(203, 243, 203, 0.6)',
+            borderRadius: '20px',
+            padding: '10px 30px',
+            color: '#05300d',
           }),
         }}
-        // clasName={select}
-        value={''}
+        classNamePrefix="react-select"
+        // value={''}
         placeholder={'Select the breed of pet'}
         options={this.props.breeds.map(breed => {
           // console.log(breed.id);
