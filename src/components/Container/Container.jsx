@@ -42,7 +42,9 @@ export class BgContainer extends Component {
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
         }}
-      ></Container>
+      >
+        {this.props.children}
+      </Container>
     );
   }
 }

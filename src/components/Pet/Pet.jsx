@@ -1,4 +1,11 @@
-import { PetContainer, PetImg, CatInfo, PetContent } from './Pet.styled';
+import {
+  PetContainer,
+  PetImg,
+  CatInfoList,
+  PetInfo,
+  PetLink,
+  PetName,
+} from './Pet.styled';
 
 export const Dog = ({ pet: { url, breeds } }) => {
   const {
@@ -17,44 +24,44 @@ export const Dog = ({ pet: { url, breeds } }) => {
   return (
     <PetContainer>
       <PetImg src={url} width="480" alt="dog" />
-      <PetContent>
-        <h2>Breed: {name}</h2>
+      <div>
+        <PetName>Breed: {name}</PetName>
         {bred_for && (
-          <p>
+          <PetInfo>
             <b>Breed for:</b> {bred_for}
-          </p>
+          </PetInfo>
         )}
         {breed_group && (
-          <p>
+          <PetInfo>
             <b>Breed group:</b> {breed_group}
-          </p>
+          </PetInfo>
         )}
         {life_span && (
-          <p>
+          <PetInfo>
             <b>Life span: </b> {life_span}
-          </p>
+          </PetInfo>
         )}
         {temperament && (
-          <p>
+          <PetInfo>
             <b>Temperament:</b> {temperament}
-          </p>
+          </PetInfo>
         )}
         {origin && (
-          <p>
+          <PetInfo>
             <b>Origin:</b> {origin}
-          </p>
+          </PetInfo>
         )}
         {height.imperial && height.metric && (
-          <p>
+          <PetInfo>
             <b>Height:</b> {height.imperial} in., {height.metric} сm.
-          </p>
+          </PetInfo>
         )}
         {weight.imperial && weight.metric && (
-          <p>
+          <PetInfo>
             <b>Weight:</b> {weight.imperial} pound, {weight.metric} kg.
-          </p>
+          </PetInfo>
         )}
-        <a
+        <PetLink
           href={`https://en.wikipedia.org/wiki/${name.replace(
             /\(([^)]+)\)/,
             ''
@@ -63,8 +70,8 @@ export const Dog = ({ pet: { url, breeds } }) => {
           rel="noopener noreferrer"
         >
           Read more...
-        </a>
-      </PetContent>
+        </PetLink>
+      </div>
     </PetContainer>
   );
 };
@@ -77,7 +84,7 @@ export const Cat = ({ pet: { url, breeds } }) => {
     energy_level,
     grooming,
     health_issues,
-    hypoallergenic,
+    // hypoallergenic,
     intelligence,
     life_span,
     name,
@@ -94,77 +101,73 @@ export const Cat = ({ pet: { url, breeds } }) => {
   return (
     <PetContainer>
       <PetImg src={url} width="480" alt="cat" />
-      <PetContent>
-        <h2>Breed: {name}</h2>
+      <div>
+        <PetName>Breed: {name}</PetName>
         {life_span && (
-          <p>
+          <PetInfo>
             <b>Life span: </b> {life_span}
-          </p>
+          </PetInfo>
         )}
         {temperament && (
-          <p>
+          <PetInfo>
             <b>Temperament:</b> {temperament}
-          </p>
+          </PetInfo>
         )}
         {weight.imperial && weight.metric && (
-          <p>
+          <PetInfo>
             <b>Weight:</b> {weight.imperial} pound, {weight.metric} kg.
-          </p>
+          </PetInfo>
         )}
         {origin && (
-          <p>
+          <PetInfo>
             <b>Origin:</b> {origin}
-          </p>
+          </PetInfo>
         )}
         {description && (
-          <p>
+          <PetInfo>
             <b>Description:</b> {description}
-          </p>
+          </PetInfo>
         )}
-        <CatInfo>
-          <ul>
-            <li>
-              Child friendly: <b>{child_friendly}</b>
-            </li>
-            <li>
-              Dog friendly: <b>{dog_friendly}</b>
-            </li>
-            <li>
-              Stranger friendly: <b>{stranger_friendly}</b>
-            </li>
-            <li>
-              Social needs: <b>{social_needs}</b>
-            </li>
-            <li>
-              Intelligence: <b>{intelligence}</b>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              Energy level: <b>{energy_level}</b>
-            </li>
-            <li>
-              Grooming: <b>{grooming}</b>
-            </li>
-            <li>
-              Health issues: <b>{health_issues}</b>
-            </li>
-            <li>
-              Hypoallergenic: <b>{hypoallergenic}</b>
-            </li>
-            <li>
-              Vocalisation: <b>{vocalisation}</b>
-            </li>
-          </ul>
-        </CatInfo>
-        <a
+        <CatInfoList>
+          <li>
+            Child friendly: <b>{child_friendly}</b>
+          </li>
+          <li>
+            Dog friendly: <b>{dog_friendly}</b>
+          </li>
+          <li>
+            Stranger friendly: <b>{stranger_friendly}</b>
+          </li>
+          <li>
+            Social needs: <b>{social_needs}</b>
+          </li>
+          <li>
+            Intelligence: <b>{intelligence}</b>
+          </li>
+          <li>
+            Energy level: <b>{energy_level}</b>
+          </li>
+          <li>
+            Grooming: <b>{grooming}</b>
+          </li>
+          <li>
+            Health issues: <b>{health_issues}</b>
+          </li>
+          {/* <li>
+            Hypoallergenic: <b>{hypoallergenic}</b>
+          </li> */}
+          <li>
+            Vocalisation: <b>{vocalisation}</b>
+          </li>
+        </CatInfoList>
+        <PetLink
           href={wikipedia_url ? wikipedia_url : cfa_url}
           target="_blank"
           rel="noopener noreferrer"
         >
           Read more...
-        </a>
-      </PetContent>
+        </PetLink>
+      </div>
     </PetContainer>
   );
 };

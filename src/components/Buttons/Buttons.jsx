@@ -1,7 +1,7 @@
-import { Button, ButtonContainer, BtnAbout } from './Buttons.styled';
+import { Button, ButtonContainer, ButtonText, Text } from './Buttons.styled';
 import { IoMdHelp } from 'react-icons/io';
 import { IconContext } from 'react-icons';
-import { AboutUs } from '../About/About';
+
 import { Component } from 'react';
 
 export class Buttons extends Component {
@@ -22,7 +22,7 @@ export class Buttons extends Component {
   render() {
     return (
       <ButtonContainer>
-        <Button type="button" onClick={() => this.props.selectCat()}>
+        <Button type="button" onClick={this.props.selectCat()}>
           <p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -35,17 +35,13 @@ export class Buttons extends Component {
               <path d="M11 22v-5H8v5H5V11.9a3.49 3.49 0 0 1-2.48-1.64A3.59 3.59 0 0 1 2 8.5 3.65 3.65 0 0 1 6 5a1.89 1.89 0 0 0 2-2 1 1 0 0 1 1-1 1 1 0 0 1 1 1 3.89 3.89 0 0 1-4 4C4.19 7 4 8.16 4 8.51S4.18 10 6 10h5.09A6 6 0 0 0 19 14.65V22h-3v-5h-2v5z"></path>
             </svg>
           </p>
-          Cat
+          <ButtonText>cat</ButtonText>
           <IconContext.Provider value={{ color: '#fff' }}>
             <IoMdHelp />
           </IconContext.Provider>
         </Button>
-        <BtnAbout type="button" onClick={this.openModal}>
-          About Us
-        </BtnAbout>
-        {this.state.onModal && <AboutUs onCloseModal={this.closeModal} />}
-
-        <Button type="button" onClick={() => this.props.selectDog()}>
+        <Text>or</Text>
+        <Button type="button" onClick={this.props.selectDog()}>
           <p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +55,7 @@ export class Buttons extends Component {
               <path d="M11.38 11.74A5.24 5.24 0 0 1 10.07 9H6a1.88 1.88 0 0 1-2-2 1 1 0 0 0-2 0 4.69 4.69 0 0 0 .48 2A3.58 3.58 0 0 0 4 10.53V22h3v-5h6v5h3v-8.13a7.35 7.35 0 0 1-4.62-2.13z"></path>
             </svg>
           </p>
-          Dog
+          <ButtonText>dog</ButtonText>
           <IconContext.Provider value={{ color: '#fff' }}>
             <IoMdHelp />
           </IconContext.Provider>
