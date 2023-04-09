@@ -4,6 +4,8 @@ export const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 30px;
+  padding: 20px 0;
+  z-index: 0;
 `;
 
 export const Button = styled.button`
@@ -15,6 +17,8 @@ export const Button = styled.button`
   cursor: pointer;
   border: none;
   box-shadow: 0 10px 0 #05300d;
+  transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out,
+    scale 0.4s ease-in-out;
 
   :hover,
   :focus {

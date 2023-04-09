@@ -1,16 +1,5 @@
 import styled from 'styled-components';
 
-export const Title = styled.h1`
-  font-size: 48px;
-  font-weight: 800;
-  color: #f8eeee;
-  margin-top: 150px;
-  /* text-shadow: -1px -1px 0 #212121, 1px -1px 0 #212121, -1px 1px 0 #212121,
-    1px 1px 0 #212121; */
-  text-shadow: 0px 0px 1px #212121, 2px 2px 1px #212121;
-  /* -webkit-text-stroke: 1px black; */
-`;
-
 export const LoaderContainer = styled.div`
   position: fixed;
   top: 50%;
@@ -26,3 +15,15 @@ export const ErrorMessage = styled.div`
   font-size: 28px;
   font-weight: 700;
 `;
+
+// export const Overlay = styled.div`
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: rgba(0, 0, 0, 0.6);
+// `;

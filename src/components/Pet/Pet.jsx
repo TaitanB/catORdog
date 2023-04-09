@@ -1,3 +1,6 @@
+import { IconContext } from 'react-icons';
+import { FaRegEye } from 'react-icons/fa';
+
 import {
   PetContainer,
   PetImg,
@@ -5,6 +8,10 @@ import {
   PetInfo,
   PetLink,
   PetName,
+  IconLike,
+  IconViewed,
+  PetImgContainer,
+  IconHeart,
 } from './Pet.styled';
 
 export const Dog = ({ pet: { url, breeds } }) => {
@@ -19,11 +26,21 @@ export const Dog = ({ pet: { url, breeds } }) => {
     weight,
   } = breeds[0];
 
-  console.log(breeds[0].height);
+  console.log(`Фото dog => ${url}, масив характеристик => ${breeds[0]}`);
 
   return (
     <PetContainer>
-      <PetImg src={url} width="480" alt="dog" />
+      <PetImgContainer>
+        <IconViewed>
+          <IconContext.Provider value={{ color: 'rgb(15 57 112)' }}>
+            <FaRegEye />
+          </IconContext.Provider>
+        </IconViewed>
+        <IconLike>
+          <IconHeart />
+        </IconLike>
+        <PetImg src={url} width="480" alt="dog" />
+      </PetImgContainer>
       <div>
         <PetName>Breed: {name}</PetName>
         {bred_for && (
@@ -84,7 +101,6 @@ export const Cat = ({ pet: { url, breeds } }) => {
     energy_level,
     grooming,
     health_issues,
-    // hypoallergenic,
     intelligence,
     life_span,
     name,
@@ -98,9 +114,21 @@ export const Cat = ({ pet: { url, breeds } }) => {
     cfa_url,
   } = breeds[0];
 
+  console.log(`Фото cat => ${url}, масив характеристик => ${breeds[0]}`);
+
   return (
     <PetContainer>
-      <PetImg src={url} width="480" alt="cat" />
+      <PetImgContainer>
+        <IconViewed>
+          <IconContext.Provider value={{ color: 'green' }}>
+            <FaRegEye />
+          </IconContext.Provider>
+        </IconViewed>
+        <IconLike>
+          <IconHeart />
+        </IconLike>
+        <PetImg src={url} width="480" alt="cat" />
+      </PetImgContainer>
       <div>
         <PetName>Breed: {name}</PetName>
         {life_span && (
@@ -153,9 +181,6 @@ export const Cat = ({ pet: { url, breeds } }) => {
           <li>
             Health issues: <b>{health_issues}</b>
           </li>
-          {/* <li>
-            Hypoallergenic: <b>{hypoallergenic}</b>
-          </li> */}
           <li>
             Vocalisation: <b>{vocalisation}</b>
           </li>

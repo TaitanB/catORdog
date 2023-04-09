@@ -1,28 +1,33 @@
+import React, { Component } from 'react';
+
+import { onFetchBgImg } from '../../Servises/Api';
+import { Header } from '../Header/Header';
+import { Footer } from '../Footer/Footer';
+
 import { Container } from './Container.styled';
-import { Component } from 'react';
-import { onFetch } from '../../Servises/Api';
 
 export class BgContainer extends Component {
   state = {
-    random_image: null,
+    randomBgImage: null,
   };
 
   componentDidMount() {
-    console.log('Container componentDidMount');
+    console.log('BgContainer componentDidMount');
 
-    onFetch()
+    onFetchBgImg()
       .then(hits => {
-        // Генеруємо випадковий індекс для масиву
-        const random_index = Math.floor(Math.random() * hits.length);
-        console.log(random_index);
-        // Отримуємо картинку, що відповідає випадковому індексу
-        const random_image = hits[random_index];
-        console.log(random_image);
-        // Отримуємо URL картинки з об'єкту
-        const random_image_url = random_image.largeImageURL;
-        console.log(random_image_url);
+        const randomIndex = Math.floor(Math.random() * hits.length);
+        console.log(`Генеруємо випадковий індекс для масиву => ${randomIndex}`);
 
-        this.setState({ random_image: random_image_url });
+        const randomImage = hits[randomIndex];
+        console.log(
+          `Отримуємо картинку, що відповідає випадковому індексу => ${randomImage}`
+        );
+
+        const randomImageUrl = randomImage.largeImageURL;
+        console.log(`Отримуємо URL картинки з об'єкту => ${randomImageUrl}`);
+
+        this.setState({ randomBgImage: randomImageUrl });
       })
       .catch(() =>
         this.setState({
@@ -30,20 +35,22 @@ export class BgContainer extends Component {
         })
       );
 
-    console.log(this.state.random_image);
+    console.log(`randomBgImage => ${this.state.randomBgImage}`);
   }
 
   render() {
     return (
       <Container
         style={{
-          backgroundImage: `url(${this.state.random_image})`,
+          backgroundImage: `url(${this.state.randomBgImage})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
         }}
       >
+        <Header />
         {this.props.children}
+        <Footer />
       </Container>
     );
   }

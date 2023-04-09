@@ -1,5 +1,5 @@
-import Select from 'react-select';
 import React from 'react';
+import Select from 'react-select';
 
 export const BreedSelect = ({ breeds, onSelect }) => {
   const options = breeds.map(breed => ({
@@ -13,19 +13,20 @@ export const BreedSelect = ({ breeds, onSelect }) => {
         control: (baseStyles, state) => ({
           ...baseStyles,
           backgroundColor: state.isFocused
-            ? 'rgba(121, 188, 198, 0.75)'
-            : ' rgba(217, 217, 217, 0.2)',
+            ? '#6ba9fae2'
+            : ' rgba(255, 255, 255, 0.75)',
           borderRadius: '20px',
           width: '1050px',
           padding: ' 0 30px',
         }),
         menu: baseStyles => ({
           ...baseStyles,
-          backgroundColor: 'rgba(121, 188, 198, 0.8)',
+          backgroundColor: '#6ba9fae2',
           fontWeight: '700',
           fontSize: '20px',
           borderRadius: '20px',
           padding: '10px 30px',
+          margin: '0',
         }),
       }}
       classNamePrefix="react-select"
