@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+
+import tracks from '../../image/png/tracksRight.png';
 import { Form, Field, ErrorMessage } from 'formik';
 
 export const FormStyled = styled(Form)`
@@ -11,6 +13,11 @@ export const FormStyled = styled(Form)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  background-image: url(${tracks});
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
 `;
 
 export const LabelStyled = styled.label`

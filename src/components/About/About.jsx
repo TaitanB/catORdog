@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import { FaCat, FaDog } from 'react-icons/fa';
-
 import { About, AboutTitle, AboutText } from './About.styled';
 
 export class AboutUs extends Component {

@@ -38,6 +38,7 @@ export const HeaderNavLink = styled(NavLink)`
   /* box-shadow: rgb(68 68 70) 0px 0px 20px 10px inset; */
   border-radius: 10px;
   background-color: rgb(68 68 70);
+  /* background: linear-gradient(to bottom left, rgb(68 68 70), transparent); */
   transition: background-color 0.4s ease-in-out, scale 0.4s ease-in-out;
 
   :hover,
@@ -45,5 +46,6 @@ export const HeaderNavLink = styled(NavLink)`
     scale: 0.9;
     background-color: #2684ff;
     /* box-shadow: inset #2684ff 0px 0px 20px 10px; */
+    /* background: linear-gradient(to bottom right, #2684ff, transparent); */
   }
 `;

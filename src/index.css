@@ -79,8 +79,11 @@ a {
 
 .active {
   scale: 0.9;
+  background: linear-gradient(to bottom right, #2684ff, transparent);
 }
 
 .active > svg {
-  color: #52d047;
+  /* color: #52d047; */
+  /* color: rgb(218, 165, 32); */
+  color: rgb(255, 215, 0);
 }

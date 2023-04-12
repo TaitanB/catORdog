@@ -49,7 +49,8 @@ export default function Pet({ petType, pet: { url, breeds } }) {
 
   // стиль для іконки, коли тварина не знаходиться у списку улюблених
   const heartStyleEmpty = {
-    fill: 'rgb(15 57 112)',
+    // fill: 'rgb(15 57 112)',
+    fill: 'rgb(255, 215, 0)',
   };
 
   // console.log(`Фото pet => ${url}, масив характеристик => ${breeds[0]}`);
@@ -109,7 +110,7 @@ export default function Pet({ petType, pet: { url, breeds } }) {
       <PetImgContainer>
         {isViewed && (
           <IconViewed onClick={offViewed}>
-            <IconContext.Provider value={{ color: 'rgb(15 57 112)' }}>
+            <IconContext.Provider value={{ color: 'rgb(255 215 0)' }}>
               <FaRegEye />
             </IconContext.Provider>
           </IconViewed>
@@ -118,7 +119,7 @@ export default function Pet({ petType, pet: { url, breeds } }) {
         <IconLike onClick={toggleFavorite}>
           <IconHeart style={isFavorite ? heartStyleFilled : heartStyleEmpty} />
         </IconLike>
-        <PetImg src={url} width="480" alt="cat" />
+        <PetImg src={url} sizes="320px" alt="pet" />
       </PetImgContainer>
       <div>
         <PetName>Breed: {name}</PetName>

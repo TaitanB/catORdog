@@ -13,11 +13,15 @@ export const PetContainer = styled.div`
 `;
 
 export const PetImgContainer = styled.div`
+  background-color: #21212175;
   position: relative;
+  display: flex;
+  border-radius: 20px;
 `;
 
 export const PetImg = styled.img`
   border-radius: 20px;
+  margin: 0 auto;
 `;
 
 export const CatInfoList = styled.ul`
@@ -58,7 +62,8 @@ export const IconLike = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.75);
+  /* background-color: rgba(255, 255, 255, 0.75); */
+  background-color: #21212195;
   position: absolute;
   top: 10px;
   left: 10px;
@@ -80,7 +85,8 @@ export const IconViewed = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.75);
+  /* background-color: rgba(255, 255, 255, 0.75); */
+  background-color: #21212195;
   position: absolute;
   bottom: 10px;
   right: 10px;

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import tracks from '../../image/png/tracksLeft.png';
+
 export const About = styled.div`
   width: 990px;
   height: 50vh;
@@ -7,6 +9,11 @@ export const About = styled.div`
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
   text-align: center;
+
+  background-image: url(${tracks});
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
 `;
 
 export const AboutTitle = styled.h2`
