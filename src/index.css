@@ -76,3 +76,11 @@ a {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
 }
+
+.active {
+  scale: 0.9;
+}
+
+.active > svg {
+  color: #52d047;
+}

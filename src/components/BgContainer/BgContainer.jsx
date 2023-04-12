@@ -11,7 +11,6 @@ export default class BgContainer extends Component {
 
   componentDidMount() {
     // console.log('BgContainer componentDidMount');
-
     onFetchBgImg()
       .then(hits => {
         const randomIndex = Math.floor(Math.random() * hits.length);
@@ -32,7 +31,6 @@ export default class BgContainer extends Component {
           error: 'Sorry, something went wrong...',
         })
       );
-
     // console.log(`randomBgImage => ${this.state.randomBgImage}`);
   }
 

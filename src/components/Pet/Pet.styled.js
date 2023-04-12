@@ -62,6 +62,16 @@ export const IconLike = styled.div`
   position: absolute;
   top: 10px;
   left: 10px;
+  transition: background-color 0.4s ease-in-out, scale 0.4s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: #2684ff;
+
+    > svg {
+      scale: 1.2;
+    }
+  }
 `;
 
 export const IconViewed = styled.div`
@@ -74,14 +84,21 @@ export const IconViewed = styled.div`
   position: absolute;
   bottom: 10px;
   right: 10px;
+  transition: background-color 0.4s ease-in-out, scale 0.4s ease-in-out,
+    fill 0.4s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: #2684ff;
+
+    > svg {
+      scale: 1.2;
+      fill: #f8eeee;
+    }
+  }
 `;
 
 export const IconHeart = styled(FaHeart)`
   transition: color 0.4s ease-in-out;
   fill: #918b8b;
-
-  &:hover,
-  &:focus {
-    scale: 1.2;
-  }
 `;

@@ -11,7 +11,6 @@ import {
   FooterSection,
   FooterContent,
   FooterBtn,
-  ButtonText,
   FooterLink,
   FooterLogo,
 } from './Footer.styled';
@@ -52,18 +51,17 @@ export class Footer extends Component {
             rel="noopener noreferrer"
           >
             <img src={cat} alt="" />
-            The Cat Fanciers' Association
+            The CFA
           </FooterLink>
           <FooterBtn type="button" onClick={this.openForm}>
-            <ButtonText>Give feedback</ButtonText>
+            Give feedback
           </FooterBtn>
           {this.state.onForm && <ContactForm onCloseForm={this.closeForm} />}
           <Link to="/">
             <FooterLogo>catORdog</FooterLogo>
           </Link>
-
           <FooterBtn type="button" onClick={this.openModal}>
-            <ButtonText>About Us</ButtonText>
+            About Us
           </FooterBtn>
           {this.state.onModal && <AboutUs onCloseModal={this.closeModal} />}
           <FooterLink

@@ -7,7 +7,6 @@ export const LoaderContainer = styled.div`
   transform: translate(-50%, -50%);
   width: 100px;
   height: 100px;
-  z-index: 9999;
 `;
 
 export const ErrorMessage = styled.div`

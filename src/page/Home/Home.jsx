@@ -6,7 +6,7 @@ import { Buttons } from '../../components/Buttons/Buttons';
 import { BreedSelect } from '../../components/BreedSelect/BreedSelect';
 import Pet from '../../components/Pet/Pet';
 import { Loader } from '../../components/Loader';
-import BgContainer from '../../components/BgContainer/BgContainer';
+
 import { Title } from './Home.styled';
 import { LoaderContainer, ErrorMessage } from '../../components/App.styled';
 
@@ -103,7 +103,7 @@ export default class Home extends Component {
     const { breeds, pet, error, petType } = this.state;
 
     return (
-      <BgContainer>
+      <>
         <Buttons
           selectCat={() => this.selectCat}
           selectDog={() => this.selectDog}
@@ -117,7 +117,7 @@ export default class Home extends Component {
         <LoaderContainer>
           {this.state.isLoading === true && <Loader />}
         </LoaderContainer>
-      </BgContainer>
+      </>
     );
   }
 }

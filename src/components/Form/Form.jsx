@@ -8,8 +8,8 @@ import {
   ErrorMessageStyled,
   CheckboxStyled,
   FormBtn,
-  BtnText,
   FormTitle,
+  LabelStyled,
 } from './Form.styled';
 
 export class ContactForm extends Component {
@@ -69,25 +69,31 @@ export class ContactForm extends Component {
           {({ isSubmitting }) => (
             <FormStyled>
               <FormTitle>Write a letter</FormTitle>
-              <label htmlFor="name">Yor name</label>
-              <FieldStyled type="text" name="name" />
-              <ErrorMessageStyled name="name" component="div" />
+              <LabelStyled>
+                Yor name
+                <FieldStyled type="text" name="name" />
+                <ErrorMessageStyled name="name" component="div" />
+              </LabelStyled>
 
-              <label htmlFor="contact">How we can contact with you?</label>
-              <FieldStyled type="text" name="contact" />
-              <ErrorMessageStyled name="contact" component="div" />
+              <LabelStyled>
+                How we can contact with you?
+                <FieldStyled type="text" name="contact" />
+                <ErrorMessageStyled name="contact" component="div" />
+              </LabelStyled>
 
-              <label htmlFor="text">What you wont to ask or propose? </label>
-              <FieldStyled as="textarea" name="text" />
+              <LabelStyled>
+                What you wont to ask or propose?
+                <FieldStyled as="textarea" name="text" />
+              </LabelStyled>
 
-              <label htmlFor="subscribe">
+              <LabelStyled>
                 <CheckboxStyled type="checkbox" name="subscribe" />I agree to
                 the privacy policy.
-              </label>
-              <ErrorMessageStyled name="subscribe" component="div" />
+                <ErrorMessageStyled name="subscribe" component="div" />
+              </LabelStyled>
 
               <FormBtn type="submit" disabled={isSubmitting}>
-                <BtnText>Send a letter</BtnText>
+                Send a letter
               </FormBtn>
             </FormStyled>
           )}
