@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/pet-info/static/css/main.ef9b3532.css",
-    "main.js": "/pet-info/static/js/main.72c82f46.js",
-    "index.html": "/pet-info/index.html",
-    "static/media/bxs-cat.svg": "/pet-info/static/media/bxs-cat.d302f25315bbda368b45cd6db5d2efa7.svg",
-    "static/media/bxs-dog.svg": "/pet-info/static/media/bxs-dog.67ccfa4ecdbe9e397059b6ad5d1513ff.svg",
-    "main.ef9b3532.css.map": "/pet-info/static/css/main.ef9b3532.css.map",
-    "main.72c82f46.js.map": "/pet-info/static/js/main.72c82f46.js.map"
+    "main.css": "/catORdog/static/css/main.ef9b3532.css",
+    "main.js": "/catORdog/static/js/main.69177a9e.js",
+    "index.html": "/catORdog/index.html",
+    "static/media/bxs-cat.svg": "/catORdog/static/media/bxs-cat.d302f25315bbda368b45cd6db5d2efa7.svg",
+    "static/media/bxs-dog.svg": "/catORdog/static/media/bxs-dog.67ccfa4ecdbe9e397059b6ad5d1513ff.svg",
+    "main.ef9b3532.css.map": "/catORdog/static/css/main.ef9b3532.css.map",
+    "main.69177a9e.js.map": "/catORdog/static/js/main.69177a9e.js.map"
   },
   "entrypoints": [
     "static/css/main.ef9b3532.css",
-    "static/js/main.72c82f46.js"
+    "static/js/main.69177a9e.js"
   ]
 }
