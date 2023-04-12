@@ -32,7 +32,6 @@ export const ButtonText = styled.p`
   color: #f8eeee;
   font-size: 28px;
   font-weight: 700;
-  /* text-transform: uppercase; */
   text-shadow: 0px 0px 1px #212121, 2px 2px 1px #212121;
 `;
 

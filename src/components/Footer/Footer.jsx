@@ -1,8 +1,12 @@
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import { AboutUs } from '../About/About';
 import { ContactForm } from '../Form/Form';
+
 import cat from '../../image/svg/bxs-cat.svg';
 import dog from '../../image/svg/bxs-dog.svg';
+
 import {
   FooterSection,
   FooterContent,
@@ -54,7 +58,10 @@ export class Footer extends Component {
             <ButtonText>Give feedback</ButtonText>
           </FooterBtn>
           {this.state.onForm && <ContactForm onCloseForm={this.closeForm} />}
-          <FooterLogo>catORdog</FooterLogo>
+          <Link to="/">
+            <FooterLogo>catORdog</FooterLogo>
+          </Link>
+
           <FooterBtn type="button" onClick={this.openModal}>
             <ButtonText>About Us</ButtonText>
           </FooterBtn>

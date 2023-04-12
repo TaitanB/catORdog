@@ -4,9 +4,9 @@ import { fetchBreeds, fetchPetByBreed } from '../../Servises/Api';
 
 import { Buttons } from '../../components/Buttons/Buttons';
 import { BreedSelect } from '../../components/BreedSelect/BreedSelect';
-import { Dog, Cat } from '../../components/Pet/Pet';
+import Pet from '../../components/Pet/Pet';
 import { Loader } from '../../components/Loader';
-
+import BgContainer from '../../components/BgContainer/BgContainer';
 import { Title } from './Home.styled';
 import { LoaderContainer, ErrorMessage } from '../../components/App.styled';
 
@@ -17,7 +17,7 @@ const CAT_API_KEY =
 const DOG_API_KEY =
   'live_QsgJd4PwVkVpjnxs42bHwp3GehROpIRziWAVdO05QFFw4fZo6qX32x2r83jSUdrU';
 
-export class Home extends Component {
+export default class Home extends Component {
   state = {
     breeds: [],
     pet: null,
@@ -48,7 +48,7 @@ export class Home extends Component {
 
   selectDog = async () => {
     try {
-      console.log('selectDog');
+      // console.log('selectDog');
 
       if (null !== this.state.pet) {
         this.setState({ pet: null });
@@ -68,25 +68,25 @@ export class Home extends Component {
   };
 
   selectBreed = async breedId => {
-    console.log(`Вибрали породу: ${breedId}`);
+    // console.log(`Вибрали породу: ${breedId}`);
 
     try {
       if (this.state.petType === 'dog') {
-        console.log(`fetchPetByBreed => DOG - ${this.state.petType}`);
+        // console.log(`fetchPetByBreed => DOG - ${this.state.petType}`);
 
         this.setState({ isLoading: true });
         const pet = await fetchPetByBreed(DogBaseURL, DOG_API_KEY, breedId);
-        console.log(`Отримали dog вибраної породи => ${pet}`);
+        // console.log(`Отримали dog вибраної породи => ${pet}`);
 
         this.setState({ pet, isLoading: false });
       }
 
       if (this.state.petType === 'cat') {
-        console.log(`fetchPetByBreed => CAT - ${this.state.petType}`);
+        // console.log(`fetchPetByBreed => CAT - ${this.state.petType}`);
 
         this.setState({ isLoading: true });
         const pet = await fetchPetByBreed(CatBaseURL, CAT_API_KEY, breedId);
-        console.log(`Отримали cat вибраної породи => ${pet}`);
+        // console.log(`Отримали cat вибраної породи => ${pet}`);
 
         this.setState({ pet, isLoading: false });
       }
@@ -100,10 +100,10 @@ export class Home extends Component {
   };
 
   render() {
-    const { breeds, pet, error } = this.state;
+    const { breeds, pet, error, petType } = this.state;
 
     return (
-      <>
+      <BgContainer>
         <Buttons
           selectCat={() => this.selectCat}
           selectDog={() => this.selectDog}
@@ -113,12 +113,11 @@ export class Home extends Component {
           <BreedSelect breeds={breeds} onSelect={this.selectBreed} />
         )}
         {error && <ErrorMessage>{error}</ErrorMessage>}
-        {pet && this.state.petType === 'dog' && <Dog pet={pet} />}
-        {pet && this.state.petType === 'cat' && <Cat pet={pet} />}
+        {pet && <Pet pet={pet} petType={petType} />}
         <LoaderContainer>
           {this.state.isLoading === true && <Loader />}
         </LoaderContainer>
-      </>
+      </BgContainer>
     );
   }
 }

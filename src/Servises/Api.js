@@ -9,7 +9,7 @@ export const onFetchBgImg = async () => {
     );
     return response.data.hits;
   } catch (error) {
-    console.error(`ERROR => ${error}`);
+    // console.error(`ERROR => ${error}`);
 
     alert('Sorry, something went wrong...');
   }
@@ -19,11 +19,11 @@ export const fetchBreeds = async (baseUrl, apiKey) => {
   try {
     const response = await axios.get(`${baseUrl}/breeds?api_key=${apiKey}`);
 
-    console.log(`Отримали список порід з => ${baseUrl}`);
+    // console.log(`Отримали список порід з => ${baseUrl}`);
 
     return response.data;
   } catch (error) {
-    console.error(`ERROR => ${error}`);
+    // console.error(`ERROR => ${error}`);
 
     alert('Sorry, something went wrong...');
   }
@@ -38,11 +38,11 @@ export const fetchPetByBreed = async (baseUrl, apiKey, breedId) => {
       }
     );
 
-    console.log(`breedPet => ${breedId}`);
+    // console.log(`breedPet => ${breedId}`);
 
     return response.data[0];
   } catch (error) {
-    console.error(`ERROR => ${error}`);
+    // console.error(`ERROR => ${error}`);
 
     alert('Sorry, something went wrong...');
   }

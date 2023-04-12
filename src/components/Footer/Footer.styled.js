@@ -8,7 +8,8 @@ export const FooterSection = styled.footer`
 export const FooterContent = styled.div`
   background-color: rgba(217, 217, 217, 0.2);
   width: 100%;
-  position: fixed;
+  position: absolute;
+  left: 0;
   bottom: 0;
   padding: 20px 0;
   display: grid;
@@ -50,14 +51,10 @@ export const ButtonText = styled.p`
 
 export const FooterLink = styled.a`
   display: flex;
-  /* max-width: 180px; */
-  /* height: 80px; */
   padding: 10px;
-  /* font-weight: 800; */
   font-size: 20px;
   text-align: center;
-  /* color: #1d2725;
-  text-shadow: -1px -1px 0 #f8eeee, 1px -1px 0 #f8eeee, -1px 1px 0 #f8eeee,
+  /* text-shadow: -1px -1px 0 #f8eeee, 1px -1px 0 #f8eeee, -1px 1px 0 #f8eeee,
     1px 1px 0 #f8eeee; */
   color: #f8eeee;
   font-weight: 700;
@@ -69,7 +66,6 @@ export const FooterLink = styled.a`
   :hover,
   :focus {
     scale: 0.9;
-    /* color: #2684ff; */
     box-shadow: inset #2684ff 0px 0px 20px 10px;
   }
 `;
@@ -79,4 +75,11 @@ export const FooterLogo = styled.p`
   font-weight: 800;
   color: #f8eeee;
   text-shadow: 0px 0px 1px #212121, 2px 2px 1px #212121;
+  transition: color 0.4s ease-in-out, scale 0.4s ease-in-out;
+
+  :hover,
+  :focus {
+    scale: 1.2;
+    color: #2684ff;
+  }
 `;

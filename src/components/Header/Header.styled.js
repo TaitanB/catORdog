@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const HeaderSection = styled.header`
   width: 100%;
@@ -10,7 +11,8 @@ export const HeaderContent = styled.div`
   background-color: rgba(217, 217, 217, 0.2);
   width: 100%;
   height: 110px;
-  position: fixed;
+  position: absolute;
+  left: 0;
   top: 0;
   padding: 20px 0;
   display: grid;
@@ -19,12 +21,12 @@ export const HeaderContent = styled.div`
   align-items: center;
 `;
 
-export const HeaderNav = styled.ul`
+export const HeaderNav = styled.nav`
   display: flex;
   gap: 10px;
 `;
 
-export const HeaderNavLink = styled.a`
+export const HeaderNavLink = styled(NavLink)`
   display: flex;
   align-items: center;
   gap: 10px;

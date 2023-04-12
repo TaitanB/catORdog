@@ -14,24 +14,24 @@ import {
 
 export class ContactForm extends Component {
   componentDidMount() {
-    console.log('Modal componentDidMount, додали слухача на віндовс');
+    // console.log('Modal componentDidMount, додали слухача на віндовс');
 
     window.addEventListener('keydown', this.handleClose);
   }
 
   componentWillUnmount() {
-    console.log('Modal componentWillUnmount, видалили слухача на віндовс');
+    // console.log('Modal componentWillUnmount, видалили слухача на віндовс');
 
     window.removeEventListener('keydown', this.handleClose);
   }
 
   handleClose = event => {
-    console.log(`event => ${event}`);
+    // console.log(`event => ${event}`);
 
     if (event.code === 'Escape' || event.target.className === 'Overlay') {
-      console.log(
-        'При натисканні Escape чи кліку по Overlay закриваємо модалку'
-      );
+      // console.log(
+      //   'При натисканні Escape чи кліку по Overlay закриваємо модалку'
+      // );
 
       return this.props.onCloseForm();
     }

@@ -83,6 +83,5 @@ export const IconHeart = styled(FaHeart)`
   &:hover,
   &:focus {
     scale: 1.2;
-    fill: red;
   }
 `;
