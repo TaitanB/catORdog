@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Formik } from 'formik';
 
+import { FaCat, FaDog } from 'react-icons/fa';
+
 // import { Overlay } from '../App.styled';
 import {
   FormStyled,
@@ -68,7 +70,16 @@ export class ContactForm extends Component {
         >
           {({ isSubmitting }) => (
             <FormStyled>
-              <FormTitle>Write a letter</FormTitle>
+              <FormTitle>
+                <FaCat style={{ width: '24', height: '24' }} /> Write a letter{' '}
+                <FaDog
+                  style={{
+                    width: '24',
+                    height: '24',
+                    transform: 'scale(-1, 1)',
+                  }}
+                />
+              </FormTitle>
               <LabelStyled>
                 Yor name
                 <FieldStyled type="text" name="name" />

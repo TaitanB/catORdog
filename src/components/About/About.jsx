@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { FaCat, FaDog } from 'react-icons/fa';
+
 import { About, AboutTitle, AboutText } from './About.styled';
 
 export class AboutUs extends Component {
@@ -24,7 +26,16 @@ export class AboutUs extends Component {
     return (
       <div className="Overlay" onClick={this.handleClose}>
         <About>
-          <AboutTitle>About Us</AboutTitle>
+          <AboutTitle>
+            <FaCat style={{ width: '36', height: '36' }} /> About Us{' '}
+            <FaDog
+              style={{
+                width: '36',
+                height: '36',
+                transform: 'scale(-1, 1)',
+              }}
+            />
+          </AboutTitle>
           <AboutText>
             Our page combines a lot of knowledge about different animals.
             Fortunately, people who love pets have contributed their knowledge

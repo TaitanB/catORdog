@@ -1,11 +1,10 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import { FaCat, FaDog } from 'react-icons/fa';
+
 import { AboutUs } from '../About/About';
 import { ContactForm } from '../Form/Form';
-
-import cat from '../../image/svg/bxs-cat.svg';
-import dog from '../../image/svg/bxs-dog.svg';
 
 import {
   FooterSection,
@@ -13,6 +12,7 @@ import {
   FooterBtn,
   FooterLink,
   FooterLogo,
+  FooterIcon,
 } from './Footer.styled';
 
 export class Footer extends Component {
@@ -50,7 +50,9 @@ export class Footer extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={cat} alt="" />
+            <FooterIcon>
+              <FaCat style={{ width: '24', height: '24' }} />
+            </FooterIcon>
             The CFA
           </FooterLink>
           <FooterBtn type="button" onClick={this.openForm}>
@@ -69,8 +71,16 @@ export class Footer extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={dog} alt="" />
             The dogtime
+            <FooterIcon>
+              <FaDog
+                style={{
+                  width: '24',
+                  height: '24',
+                  transform: 'scale(-1, 1)',
+                }}
+              />
+            </FooterIcon>
           </FooterLink>
         </FooterContent>
       </FooterSection>

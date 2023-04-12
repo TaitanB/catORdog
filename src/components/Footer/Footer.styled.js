@@ -49,6 +49,7 @@ export const FooterLink = styled.a`
     1px 1px 0 #f8eeee; */
   color: #f8eeee;
   font-weight: 800;
+  align-items: center;
   text-shadow: 0px 0px 1px #212121, 2px 2px 1px #212121;
   border-radius: 10px;
   /* box-shadow: rgb(68 68 70) 0px 0px 20px 10px inset; */
@@ -60,10 +61,15 @@ export const FooterLink = styled.a`
     scale: 1.2;
     color: #2684ff;
     text-decoration: underline;
+
+    > div {
+      color: #2684ff;
+    }
   }
 `;
 
 export const FooterLogo = styled.p`
+  display: inline-block;
   font-size: 36px;
   font-weight: 800;
   color: #f8eeee;
@@ -75,4 +81,13 @@ export const FooterLogo = styled.p`
     scale: 1.2;
     color: #2684ff;
   }
+`;
+
+export const FooterIcon = styled.div`
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 5px;
+  color: #1d2725;
 `;
