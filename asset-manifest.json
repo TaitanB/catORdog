@@ -1,15 +1,13 @@
 {
   "files": {
     "main.css": "/catORdog/static/css/main.af5fc298.css",
-    "main.js": "/catORdog/static/js/main.1a0edb0d.js",
+    "main.js": "/catORdog/static/js/main.5926fcbe.js",
     "index.html": "/catORdog/index.html",
-    "static/media/bxs-cat.svg": "/catORdog/static/media/bxs-cat.d302f25315bbda368b45cd6db5d2efa7.svg",
-    "static/media/bxs-dog.svg": "/catORdog/static/media/bxs-dog.67ccfa4ecdbe9e397059b6ad5d1513ff.svg",
     "main.af5fc298.css.map": "/catORdog/static/css/main.af5fc298.css.map",
-    "main.1a0edb0d.js.map": "/catORdog/static/js/main.1a0edb0d.js.map"
+    "main.5926fcbe.js.map": "/catORdog/static/js/main.5926fcbe.js.map"
   },
   "entrypoints": [
     "static/css/main.af5fc298.css",
-    "static/js/main.1a0edb0d.js"
+    "static/js/main.5926fcbe.js"
   ]
 }
