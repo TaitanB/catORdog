@@ -77,8 +77,7 @@ export default class Home extends Component {
         this.setState({ isLoading: true });
         const pet = await fetchPetByBreed(DogBaseURL, DOG_API_KEY, breedId);
         // console.log(`Отримали dog вибраної породи => ${pet}`);
-
-        this.setState({ pet, isLoading: false });
+        pet && this.setState({ pet, isLoading: false });
       }
 
       if (this.state.petType === 'cat') {
@@ -88,7 +87,7 @@ export default class Home extends Component {
         const pet = await fetchPetByBreed(CatBaseURL, CAT_API_KEY, breedId);
         // console.log(`Отримали cat вибраної породи => ${pet}`);
 
-        this.setState({ pet, isLoading: false });
+        pet && this.setState({ pet, isLoading: false });
       }
     } catch (error) {
       console.log(error);

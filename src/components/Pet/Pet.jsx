@@ -15,6 +15,8 @@ import {
   IconViewed,
   PetImgContainer,
   IconHeart,
+  PetInfiContainer,
+  PetTest,
 } from './Pet.styled';
 
 export default function Pet({ petType, pet: { url, breeds } }) {
@@ -121,94 +123,101 @@ export default function Pet({ petType, pet: { url, breeds } }) {
         <PetImg src={url} sizes="320px" alt="pet" />
       </PetImgContainer>
       <div>
-        <PetName>Breed: {name}</PetName>
-        {bred_for && (
-          <PetInfo>
-            <b>Breed for:</b> {bred_for}
-          </PetInfo>
-        )}
-        {breed_group && (
-          <PetInfo>
-            <b>Breed group:</b> {breed_group}
-          </PetInfo>
-        )}
-        {life_span && (
-          <PetInfo>
-            <b>Life span: </b> {life_span}
-          </PetInfo>
-        )}
-        {temperament && (
-          <PetInfo>
-            <b>Temperament:</b> {temperament}
-          </PetInfo>
-        )}
-        {height?.imperial && height?.metric && (
-          <PetInfo>
-            <b>Height:</b> {height.imperial} in., {height.metric} сm.
-          </PetInfo>
-        )}
-        {weight?.imperial && weight?.metric && (
-          <PetInfo>
-            <b>Weight:</b> {weight.imperial} pound, {weight.metric} kg.
-          </PetInfo>
-        )}
-        {origin && (
-          <PetInfo>
-            <b>Origin:</b> {origin}
-          </PetInfo>
-        )}
-        {description && (
-          <PetInfo>
-            <b>Description:</b> {description}
-          </PetInfo>
-        )}
-        <CatInfoList>
-          {child_friendly && (
-            <li>
-              Child friendly: <b>{child_friendly}</b>
-            </li>
+        <PetName>
+          <PetInfo>Breed:</PetInfo> {name}
+        </PetName>
+
+        <PetInfiContainer>
+          {bred_for && (
+            <PetInfo>
+              Breed for: <PetTest>{bred_for}</PetTest>
+            </PetInfo>
           )}
-          {dog_friendly && (
-            <li>
-              Dog friendly: <b>{dog_friendly}</b>
-            </li>
+          {breed_group && (
+            <PetInfo>
+              Breed group: <PetTest>{breed_group}</PetTest>
+            </PetInfo>
           )}
-          {stranger_friendly && (
-            <li>
-              Stranger friendly: <b>{stranger_friendly}</b>
-            </li>
+          {life_span && (
+            <PetInfo>
+              Life span: <PetTest>{life_span}</PetTest>
+            </PetInfo>
           )}
-          {social_needs && (
-            <li>
-              Social needs: <b>{social_needs}</b>
-            </li>
+          {temperament && (
+            <PetInfo>
+              Temperament: <PetTest> {temperament}</PetTest>
+            </PetInfo>
           )}
-          {intelligence && (
-            <li>
-              Intelligence: <b>{intelligence}</b>
-            </li>
+          {height?.imperial && height?.metric && (
+            <PetInfo>
+              Height: <PetTest>{height.imperial} in.</PetTest>,{' '}
+              <PetTest>{height.metric} сm</PetTest>.
+            </PetInfo>
           )}
-          {energy_level && (
-            <li>
-              Energy level: <b>{energy_level}</b>
-            </li>
+          {weight?.imperial && weight?.metric && (
+            <PetInfo>
+              Weight: <PetTest>{weight.imperial} pound</PetTest>,{' '}
+              <PetTest>{weight.metric} kg</PetTest>.
+            </PetInfo>
           )}
-          {grooming && (
-            <li>
-              Grooming: <b>{grooming}</b>
-            </li>
+          {origin && (
+            <PetInfo>
+              Origin: <PetTest> {origin}</PetTest>
+            </PetInfo>
           )}
-          {health_issues && (
-            <li>
-              Health issues: <b>{health_issues}</b>
-            </li>
+          {description && (
+            <PetInfo>
+              Description: <PetTest> {description}</PetTest>
+            </PetInfo>
           )}
-          {vocalisation && (
-            <li>
-              Vocalisation: <b>{vocalisation}</b>
-            </li>
-          )}
-        </CatInfoList>
+          <CatInfoList>
+            {child_friendly && (
+              <li>
+                Child friendly: <b>{child_friendly}</b>
+              </li>
+            )}
+            {dog_friendly && (
+              <li>
+                Dog friendly: <b>{dog_friendly}</b>
+              </li>
+            )}
+            {stranger_friendly && (
+              <li>
+                Stranger friendly: <b>{stranger_friendly}</b>
+              </li>
+            )}
+            {social_needs && (
+              <li>
+                Social needs: <b>{social_needs}</b>
+              </li>
+            )}
+            {intelligence && (
+              <li>
+                Intelligence: <b>{intelligence}</b>
+              </li>
+            )}
+            {energy_level && (
+              <li>
+                Energy level: <b>{energy_level}</b>
+              </li>
+            )}
+            {grooming && (
+              <li>
+                Grooming: <b>{grooming}</b>
+              </li>
+            )}
+            {health_issues && (
+              <li>
+                Health issues: <b>{health_issues}</b>
+              </li>
+            )}
+            {vocalisation && (
+              <li>
+                Vocalisation: <b>{vocalisation}</b>
+              </li>
+            )}
+          </CatInfoList>
+        </PetInfiContainer>
         <PetLink
           href={
             petType === 'cat'

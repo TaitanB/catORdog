@@ -18,6 +18,7 @@ export const BreedSelect = ({ breeds, onSelect }) => {
           borderRadius: '20px',
           width: '1050px',
           padding: ' 0 30px',
+          marginBottom: '30px',
         }),
         menu: baseStyles => ({
           ...baseStyles,

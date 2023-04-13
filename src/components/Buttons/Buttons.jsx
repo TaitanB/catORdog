@@ -1,7 +1,6 @@
 import { Component } from 'react';
 
 import { Button, ButtonContainer, ButtonText, Text } from './Buttons.styled';
-// import { GiCat, GiSittingDog } from 'react-icons/gi';
 import { FaCat, FaDog } from 'react-icons/fa';
 
 export class Buttons extends Component {
@@ -10,19 +9,10 @@ export class Buttons extends Component {
       <ButtonContainer>
         <Button type="button" onClick={this.props.selectCat()}>
           <FaCat style={{ width: '24', height: '24' }} />
-          {/* <GiCat style={{ fill: ' #fff', width: '24', height: '24' }} /> */}
           <ButtonText>cat ?</ButtonText>
         </Button>
         <Text>or</Text>
         <Button type="button" onClick={this.props.selectDog()}>
-          {/* <GiSittingDog
-            style={{
-              fill: ' #fff',
-              width: '24',
-              height: '24',
-              transform: 'scale(-1, 1)',
-            }}
-          /> */}
           <FaDog
             style={{
               width: '24',

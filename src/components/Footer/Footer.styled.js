@@ -45,14 +45,11 @@ export const FooterLink = styled.a`
   padding: 10px;
   font-size: 20px;
   text-align: center;
-  /* text-shadow: -1px -1px 0 #f8eeee, 1px -1px 0 #f8eeee, -1px 1px 0 #f8eeee,
-    1px 1px 0 #f8eeee; */
   color: #f8eeee;
   font-weight: 800;
   align-items: center;
   text-shadow: 0px 0px 1px #212121, 2px 2px 1px #212121;
   border-radius: 10px;
-  /* box-shadow: rgb(68 68 70) 0px 0px 20px 10px inset; */
   transition: text-decoration 0.4s ease-in-out, color 0.4s ease-in-out,
     scale 0.4s ease-in-out;
 
@@ -69,12 +66,24 @@ export const FooterLink = styled.a`
 `;
 
 export const FooterLogo = styled.p`
-  display: inline-block;
+  text-align: center;
+  padding: 5px;
   font-size: 36px;
   font-weight: 800;
   color: #f8eeee;
-  text-shadow: 0px 0px 1px #212121, 2px 2px 1px #212121;
+  text-shadow: -1px -1px 0px #212121, 3px 3px 0px #212121, 6px 6px 0px #00000055;
+  margin-bottom: 15px;
   transition: color 0.4s ease-in-out, scale 0.4s ease-in-out;
+  /* overflow: hidden;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(
+    145deg,
+    #2684ff 10%,
+    #212121 50%,
+    gold 110%
+  ); */
 
   :hover,
   :focus {

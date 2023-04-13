@@ -9,9 +9,9 @@ export const onFetchBgImg = async () => {
     );
     return response.data.hits;
   } catch (error) {
-    // console.error(`ERROR => ${error}`);
+    console.error(`ERROR => ${error}`);
 
-    alert('Sorry, something went wrong...');
+    alert('Sorry, we were not able to download the background image :(');
   }
 };
 
@@ -23,9 +23,11 @@ export const fetchBreeds = async (baseUrl, apiKey) => {
 
     return response.data;
   } catch (error) {
-    // console.error(`ERROR => ${error}`);
+    console.error(`ERROR => ${error}`);
 
-    alert('Sorry, something went wrong...');
+    alert(
+      "We're sorry, we couldn't load the list of animal breeds. Please reload the page or try again later."
+    );
   }
 };
 
@@ -42,8 +44,10 @@ export const fetchPetByBreed = async (baseUrl, apiKey, breedId) => {
 
     return response.data[0];
   } catch (error) {
-    // console.error(`ERROR => ${error}`);
+    console.error(`ERROR => ${error}`);
 
-    alert('Sorry, something went wrong...');
+    alert(
+      "We're sorry, we couldn't upload the information about the pet of the selected breed. Please reload the page or try again later."
+    );
   }
 };
