@@ -44,13 +44,12 @@ export default function Pet({ petType, pet: { url, breeds } }) {
 
   // стиль для іконки, коли тварина знаходиться у списку улюблених
   const heartStyleFilled = {
-    fill: 'red',
+    fill: 'rgb(255, 215, 0)',
   };
 
   // стиль для іконки, коли тварина не знаходиться у списку улюблених
   const heartStyleEmpty = {
-    // fill: 'rgb(15 57 112)',
-    fill: 'rgb(255, 215, 0)',
+    fill: '#2684ff',
   };
 
   // console.log(`Фото pet => ${url}, масив характеристик => ${breeds[0]}`);

@@ -8,7 +8,7 @@ export const PetContainer = styled.div`
   gap: 30px;
   align-items: center;
   width: 990px;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.85);
   border-radius: 20px;
 `;
 
@@ -63,7 +63,7 @@ export const IconLike = styled.div`
   height: 20px;
   border-radius: 50%;
   /* background-color: rgba(255, 255, 255, 0.75); */
-  background-color: #21212195;
+  background-color: rgba(33, 33, 33, 0.3);
   position: absolute;
   top: 10px;
   left: 10px;
@@ -71,7 +71,7 @@ export const IconLike = styled.div`
 
   &:hover,
   &:focus {
-    background-color: #2684ff;
+    /* background-color: #2684ff; */
 
     > svg {
       scale: 1.2;
@@ -86,7 +86,7 @@ export const IconViewed = styled.div`
   height: 20px;
   border-radius: 50%;
   /* background-color: rgba(255, 255, 255, 0.75); */
-  background-color: #21212195;
+  background-color: rgba(33, 33, 33, 0.3);
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -95,11 +95,12 @@ export const IconViewed = styled.div`
 
   &:hover,
   &:focus {
-    background-color: #2684ff;
+    /* background-color: #2684ff; */
 
     > svg {
       scale: 1.2;
-      fill: #f8eeee;
+      /* fill: #f8eeee; */
+      fill: #2684ff;
     }
   }
 `;

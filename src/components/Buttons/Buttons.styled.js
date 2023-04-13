@@ -10,22 +10,31 @@ export const ButtonContainer = styled.div`
 
 export const Button = styled.button`
   font-family: inherit;
-  background-color: #0b4f17;
+  /* background-color: #0b4f17; */
+  background-color: #2684ff;
+  box-shadow: 0 10px 0 rgb(15 57 112);
   width: 100px;
   height: 100px;
   border-radius: 50%;
   cursor: pointer;
   border: none;
-  box-shadow: 0 10px 0 #05300d;
+  /* box-shadow: 0 10px 0 #05300d; */
   transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out,
     border 0.4s ease-in-out, scale 0.4s ease-in-out #05300d;
   /* border: 5px outset #05300d; */
 
+  > svg {
+    scale: 1.2;
+    fill: #f8eeee;
+  }
+
   :hover,
   :focus {
     scale: 0.95;
-    background-color: #2684ff;
-    box-shadow: 0 10px 0 rgb(15 57 112);
+    > svg {
+      scale: 1.2;
+      fill: gold;
+    }
     /* border: 5px outset rgb(15 57 112); */
   }
 `;

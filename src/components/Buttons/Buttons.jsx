@@ -9,7 +9,7 @@ export class Buttons extends Component {
     return (
       <ButtonContainer>
         <Button type="button" onClick={this.props.selectCat()}>
-          <FaCat style={{ fill: ' #fff', width: '24', height: '24' }} />
+          <FaCat style={{ width: '24', height: '24' }} />
           {/* <GiCat style={{ fill: ' #fff', width: '24', height: '24' }} /> */}
           <ButtonText>cat ?</ButtonText>
         </Button>
@@ -25,7 +25,6 @@ export class Buttons extends Component {
           /> */}
           <FaDog
             style={{
-              fill: ' #fff',
               width: '24',
               height: '24',
               transform: 'scale(-1, 1)',
