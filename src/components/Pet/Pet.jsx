@@ -15,7 +15,7 @@ import {
   IconViewed,
   PetImgContainer,
   IconHeart,
-  PetInfiContainer,
+  PetInfoContainer,
   PetTest,
 } from './Pet.styled';
 
@@ -124,10 +124,10 @@ export default function Pet({ petType, pet: { url, breeds } }) {
       </PetImgContainer>
       <div>
         <PetName>
-          <PetInfo>Breed:</PetInfo> {name}
+          <span>Breed: </span> {name}
         </PetName>
 
-        <PetInfiContainer>
+        <PetInfoContainer>
           {bred_for && (
             <PetInfo>
               Breed for: <PetTest>{bred_for}</PetTest>
@@ -159,7 +159,7 @@ export default function Pet({ petType, pet: { url, breeds } }) {
               Weight: <PetTest>{weight.imperial} pound</PetTest>,{' '}
               <PetTest>{weight.metric} kg</PetTest>.
             </PetInfo>
-          )}
+          )}{' '}
           {origin && (
             <PetInfo>
               Origin: <PetTest> {origin}</PetTest>
@@ -217,7 +217,7 @@ export default function Pet({ petType, pet: { url, breeds } }) {
               </li>
             )}
           </CatInfoList>
-        </PetInfiContainer>
+        </PetInfoContainer>
         <PetLink
           href={
             petType === 'cat'

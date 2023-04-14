@@ -20,10 +20,10 @@ export const PetImgContainer = styled.div`
   border-radius: 20px;
 `;
 
-export const PetInfiContainer = styled.div`
-  padding: 0 10px;
+export const PetInfoContainer = styled.div`
   max-height: 35vh;
   overflow: auto;
+  padding: 0 10px;
   margin-bottom: 10px;
 
   &::-webkit-scrollbar {
@@ -55,7 +55,6 @@ export const CatInfoList = styled.ul`
 `;
 
 export const PetInfo = styled.p`
-  display: inline-block;
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: 800;
@@ -82,11 +81,14 @@ export const PetLink = styled.a`
 `;
 
 export const PetName = styled.h2`
-  display: inline;
   font-size: 28px;
   font-weight: 800;
   margin-bottom: 10px;
   padding-left: 10px;
+
+  > span {
+    font-size: 20px;
+  }
 `;
 
 export const IconLike = styled.div`
