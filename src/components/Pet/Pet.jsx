@@ -1,8 +1,8 @@
 import React from 'react';
-import useLocalStorage from '../../hooks/useLocalStorage';
-
 import { IconContext } from 'react-icons';
 import { FaRegEye } from 'react-icons/fa';
+
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 import {
   PetContainer,
@@ -103,7 +103,7 @@ export default function Pet({ petType, pet: { url, breeds } }) {
 
   const offViewed = () => {
     setViewed(prevViewed => prevViewed.filter(viewe => viewe.id !== id));
-    alert('Removed from Favorites!');
+    alert('Removed from Viewed!');
   };
 
   return (

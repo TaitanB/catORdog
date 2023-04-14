@@ -34,18 +34,14 @@ export const HeaderNavLink = styled(NavLink)`
   color: #f8eeee;
   font-size: 20px;
   font-weight: 700;
-  text-shadow: 0px 0px 1px #212121, 2px 2px 1px #212121;
-  /* box-shadow: rgb(68 68 70) 0px 0px 20px 10px inset; */
+  text-shadow: -1px -1px 0px #212121, 3px 3px 0px #212121, 4px 4px 0px #00000055;
   border-radius: 10px;
   background-color: rgb(68 68 70);
-  /* background: linear-gradient(to bottom left, rgb(68 68 70), transparent); */
   transition: background-color 0.4s ease-in-out, scale 0.4s ease-in-out;
 
   :hover,
   :focus {
     scale: 0.9;
     background-color: #2684ff;
-    /* box-shadow: inset #2684ff 0px 0px 20px 10px; */
-    /* background: linear-gradient(to bottom right, #2684ff, transparent); */
   }
 `;

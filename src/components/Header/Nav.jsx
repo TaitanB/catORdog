@@ -1,4 +1,5 @@
 import { FaHome, FaRegEye, FaHeart } from 'react-icons/fa';
+
 import { HeaderNav, HeaderNavLink } from './Header.styled';
 
 export default function Nav() {

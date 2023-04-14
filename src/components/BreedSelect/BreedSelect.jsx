@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 
-export const BreedSelect = ({ breeds, onSelect }) => {
+export default function BreedSelect({ breeds, onSelect }) {
   const options = breeds.map(breed => ({
     value: breed.id,
     label: breed.name,
@@ -37,7 +37,7 @@ export const BreedSelect = ({ breeds, onSelect }) => {
       onChange={option => onSelect(option.value)}
     />
   );
-};
+}
 
 // export class BreedSelect extends Component {
 //   // componentDidMount() {

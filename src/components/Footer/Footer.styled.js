@@ -29,7 +29,7 @@ export const FooterBtn = styled.button`
   color: #f8eeee;
   font-size: 18px;
   font-weight: 700;
-  text-shadow: 0px 0px 1px #212121, 2px 2px 1px #212121;
+  text-shadow: -1px -1px 0px #212121, 3px 3px 0px #212121, 4px 4px 0px #00000055;
   transition: background-color 0.4s ease-in-out, scale 0.4s ease-in-out;
 
   :hover,
@@ -48,7 +48,7 @@ export const FooterLink = styled.a`
   color: #f8eeee;
   font-weight: 800;
   align-items: center;
-  text-shadow: 0px 0px 1px #212121, 2px 2px 1px #212121;
+  text-shadow: -1px -1px 0px #212121, 3px 3px 0px #212121, 4px 4px 0px #00000055;
   border-radius: 10px;
   transition: text-decoration 0.4s ease-in-out, color 0.4s ease-in-out,
     scale 0.4s ease-in-out;
@@ -57,7 +57,6 @@ export const FooterLink = styled.a`
   :focus {
     scale: 1.2;
     color: #2684ff;
-    text-decoration: underline;
 
     > div {
       color: #2684ff;
@@ -71,7 +70,7 @@ export const FooterLogo = styled.p`
   font-size: 36px;
   font-weight: 800;
   color: #f8eeee;
-  text-shadow: -1px -1px 0px #212121, 3px 3px 0px #212121, 6px 6px 0px #00000055;
+  text-shadow: -1px -1px 0px #212121, 3px 3px 0px #212121, 4px 4px 0px #00000055;
   margin-bottom: 15px;
   transition: color 0.4s ease-in-out, scale 0.4s ease-in-out;
   /* overflow: hidden;

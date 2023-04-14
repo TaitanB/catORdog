@@ -10,7 +10,6 @@ export const ButtonContainer = styled.div`
 
 export const Button = styled.button`
   font-family: inherit;
-  /* background-color: #0b4f17; */
   background-color: #2684ff;
   box-shadow: 0 10px 0 rgb(15 57 112);
   width: 100px;
@@ -18,14 +17,12 @@ export const Button = styled.button`
   border-radius: 50%;
   cursor: pointer;
   border: none;
-  /* box-shadow: 0 10px 0 #05300d; */
-  transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out,
-    border 0.4s ease-in-out, scale 0.4s ease-in-out #05300d;
-  /* border: 5px outset #05300d; */
+  transition: scale 0.4s ease-in-out;
 
   > svg {
     scale: 1.2;
     fill: #f8eeee;
+    transition: fill 0.4s ease-in-out, scale 0.4s ease-in-out;
   }
 
   :hover,
@@ -35,7 +32,6 @@ export const Button = styled.button`
       scale: 1.2;
       fill: gold;
     }
-    /* border: 5px outset rgb(15 57 112); */
   }
 `;
 
@@ -43,7 +39,7 @@ export const ButtonText = styled.p`
   color: #f8eeee;
   font-size: 28px;
   font-weight: 700;
-  text-shadow: 0px 0px 1px #212121, 2px 2px 1px #212121;
+  text-shadow: -1px -1px 0px #212121, 3px 3px 0px #212121, 4px 4px 0px #00000055;
 `;
 
 export const Text = styled.span`
@@ -51,5 +47,5 @@ export const Text = styled.span`
   font-size: 72px;
   font-weight: 700;
   text-transform: uppercase;
-  text-shadow: 0px 0px 1px #212121, 2px 2px 1px #212121;
+  text-shadow: -1px -1px 0px #212121, 3px 3px 0px #212121, 4px 4px 0px #00000055;
 `;

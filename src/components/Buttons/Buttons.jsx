@@ -1,30 +1,28 @@
-import { Component } from 'react';
-
-import { Button, ButtonContainer, ButtonText, Text } from './Buttons.styled';
+import React from 'react';
 import { FaCat, FaDog } from 'react-icons/fa';
 
-export class Buttons extends Component {
-  render() {
-    return (
-      <ButtonContainer>
-        <Button type="button" onClick={this.props.selectCat()}>
-          <FaCat style={{ width: '24', height: '24' }} />
-          <ButtonText>cat ?</ButtonText>
-        </Button>
-        <Text>or</Text>
-        <Button type="button" onClick={this.props.selectDog()}>
-          <FaDog
-            style={{
-              width: '24',
-              height: '24',
-              transform: 'scale(-1, 1)',
-            }}
-          />
-          <ButtonText>dog ?</ButtonText>
-        </Button>
-      </ButtonContainer>
-    );
-  }
+import { Button, ButtonContainer, ButtonText, Text } from './Buttons.styled';
+
+export default function Buttons({ selectCat, selectDog }) {
+  return (
+    <ButtonContainer>
+      <Button type="button" onClick={selectCat}>
+        <FaCat style={{ width: '24', height: '24' }} />
+        <ButtonText>cat ?</ButtonText>
+      </Button>
+      <Text>or</Text>
+      <Button type="button" onClick={selectDog}>
+        <FaDog
+          style={{
+            width: '24',
+            height: '24',
+            transform: 'scale(-1, 1)',
+          }}
+        />
+        <ButtonText>dog ?</ButtonText>
+      </Button>
+    </ButtonContainer>
+  );
 }
 
 // export const Buttons = ({ selectCat, selectDog }) => {

@@ -56,7 +56,7 @@ export const FormBtn = styled.button`
   color: #f8eeee;
   font-size: 18px;
   font-weight: 700;
-  text-shadow: 0px 0px 1px #212121, 2px 2px 1px #212121;
+  text-shadow: -1px -1px 0px #212121, 3px 3px 0px #212121, 4px 4px 0px #00000055;
   transition: background-color 0.4s ease-in-out, scale 0.4s ease-in-out;
 
   :hover,

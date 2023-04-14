@@ -10,7 +10,8 @@ export const LoaderContainer = styled.div`
 `;
 
 export const ErrorMessage = styled.div`
-  padding: 30px 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
   font-size: 28px;
   font-weight: 700;
 `;

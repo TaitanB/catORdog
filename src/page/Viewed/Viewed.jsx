@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { FaArrowUp } from 'react-icons/fa';
+
 import useLocalStorage from '../../hooks/useLocalStorage';
 import Pet from '../../components/Pet/Pet';
-import { FaArrowUp } from 'react-icons/fa';
+
 import { ViewedList, ViewedTitle, ViewedUp } from './Viewed.styled';
 
 export default function Viewed() {

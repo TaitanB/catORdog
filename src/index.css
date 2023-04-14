@@ -1,9 +1,10 @@
 @import-normalize; /* bring in normalize.css styles */
+
 @import url('https://fonts.googleapis.com/css2?family=Life+Savers:wght@400;700;800&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Life Savers', cursive;
+  font-family: 'Life Savers', serif;
   line-height: 1.5;
   font-weight: 700;
   color: #1d2725;
@@ -12,16 +13,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
 ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
+
 h1,
 h2,
 h3,
@@ -36,7 +33,6 @@ img {
   display: block;
   max-height: 50vh;
   max-width: 100%;
-  /* height: auto; */
 }
 
 a {
@@ -79,11 +75,10 @@ a {
 
 .active {
   scale: 0.9;
-  background: linear-gradient(to bottom right, #2684ff, transparent);
+  background: linear-gradient(to bottom right, #2684ff, transparent),
+    linear-gradient(to top left, rgb(68 68 70), transparent);
 }
 
 .active > svg {
-  /* color: #52d047; */
-  /* color: rgb(218, 165, 32); */
   color: rgb(255, 215, 0);
 }

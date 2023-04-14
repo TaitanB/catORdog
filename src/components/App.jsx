@@ -1,10 +1,10 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
+import SharedLayout from '../components/SharedLayout/SharedLayout';
 import Home from '../page/Home/Home';
 import Viewed from '../page/Viewed/Viewed';
 import Favorites from '../page/Favorites/Favorites';
-import SharedLayout from '../components/SharedLayout/SharedLayout';
 import NotFound from '../page/NotFound/NotFound';
 
 export default function App() {

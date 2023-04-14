@@ -13,7 +13,7 @@ export const ViewedTitle = styled.h1`
   color: #f8eeee;
   padding-top: 150px;
   margin-bottom: 30px;
-  text-shadow: 0px 0px 1px #212121, 2px 2px 1px #212121;
+  text-shadow: -1px -1px 0px #212121, 3px 3px 0px #212121, 4px 4px 0px #00000055;
 `;
 
 export const ViewedUp = styled.a`
