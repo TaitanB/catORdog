@@ -21,7 +21,7 @@ export const PetImgContainer = styled.div`
 `;
 
 export const PetInfoContainer = styled.div`
-  max-height: 35vh;
+  max-height: 30vh;
   overflow: auto;
   padding: 0 10px;
   margin-bottom: 10px;
