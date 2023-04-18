@@ -19,7 +19,12 @@ import {
   PetTest,
 } from './Pet.styled';
 
-export default function Pet({ petType, pet: { url, breeds } }) {
+export default function Pet({
+  petType,
+  pet: { url, breeds },
+  onRemoveFavorites,
+  onRemoveViewed,
+}) {
   const {
     bred_for,
     breed_group,
@@ -77,9 +82,11 @@ export default function Pet({ petType, pet: { url, breeds } }) {
       alert('Added to Favorites!');
     } else {
       // якщо тварина вже обрана, то видаляємо її зі списку
+
       setFavorites(prevFavorites =>
         prevFavorites.filter(favorite => favorite.id !== id)
       );
+      onRemoveFavorites(id);
       alert('Removed from Favorites!');
     }
   };
@@ -101,16 +108,18 @@ export default function Pet({ petType, pet: { url, breeds } }) {
     }
   };
 
-  const offViewed = () => {
-    setViewed(prevViewed => prevViewed.filter(viewe => viewe.id !== id));
-    alert('Removed from Viewed!');
-  };
+  // const offViewed = () => {
+  //   console.log(id);
+  //   onRemoveViewed(id);
+  //   // setViewed(prevViewed => prevViewed.filter(viewe => viewe.id !== id));
+  //   alert('Removed from Viewed!');
+  // };
 
   return (
     <PetContainer>
       <PetImgContainer>
         {isViewed && (
-          <IconViewed onClick={offViewed}>
+          <IconViewed onClick={() => onRemoveViewed(id)}>
             <IconContext.Provider value={{ color: 'rgb(255 215 0)' }}>
               <FaRegEye />
             </IconContext.Provider>

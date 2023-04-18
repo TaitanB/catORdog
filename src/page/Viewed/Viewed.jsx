@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
 
 import useLocalStorage from '../../hooks/useLocalStorage';
@@ -7,31 +7,49 @@ import Pet from '../../components/Pet/Pet';
 import { ViewedList, ViewedTitle, ViewedUp } from './Viewed.styled';
 
 export default function Viewed() {
-  const [viewed] = useLocalStorage('Viewed', []);
-  const [viewedPets, setViewedPets] = useState([]);
-
-  if (viewed.length === 0) {
-    alert('Тут нічого немає :(');
-  } else if (viewedPets.length === 0) {
-    setViewedPets(viewed);
-  }
+  const [viewed, setViewed] = useLocalStorage('Viewed', []);
+  const [petsViewed, setPetsViewed] = useState([]);
 
   useEffect(() => {
     console.log('viewed useEffect');
-    setViewedPets(prevPets => prevPets.filter(pet => viewed.includes(pet.id)));
-  }, [viewed]);
+
+    if (petsViewed) {
+      setPetsViewed(prevPets =>
+        prevPets.filter(pet => viewed.includes(pet.id))
+      );
+    }
+    setPetsViewed(viewed);
+  }, [petsViewed, viewed]);
+
+  const removeViewed = useCallback(
+    id => {
+      console.log('removeViewed');
+
+      // видаляємо картку тварини зі сторінки Viewed
+      setPetsViewed(petsViewed.filter(pet => pet.id !== id));
+
+      // видаляємо тварину з Viewed у LocalStorage
+      setViewed(prevViewed => prevViewed.filter(viewe => viewe.id !== id));
+      alert('Removed from Viewed!');
+    },
+    [petsViewed, setViewed]
+  );
 
   return (
     <>
       <ViewedTitle>Your viewed pets</ViewedTitle>
       <ViewedList>
-        {viewedPets.map(pet => (
-          <li key={pet.id}>
-            <Pet pet={pet} />
-          </li>
-        ))}
+        {viewed.length === 0 ? (
+          <div>You have not yet viewed information about any pets</div>
+        ) : (
+          petsViewed.map(pet => (
+            <li key={pet.id}>
+              <Pet pet={pet} onRemoveViewed={removeViewed} />
+            </li>
+          ))
+        )}
       </ViewedList>
-      {viewedPets.length > 1 && (
+      {petsViewed.length > 1 && (
         <ViewedUp href="#Up">
           <FaArrowUp />
         </ViewedUp>
