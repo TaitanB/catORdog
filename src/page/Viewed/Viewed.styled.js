@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import tracks from '../../image/png/tracksLeft.png';
 
 export const ViewedList = styled.ul`
   display: flex;
@@ -37,4 +38,23 @@ export const ViewedUp = styled.a`
     color: #fff;
     background-color: #2684ff;
   }
+`;
+
+export const NoViewed = styled.div`
+  display: flex;
+  gap: 30px;
+  padding: 80px;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #212121;
+  text-shadow: -1px -1px 0 #2684ff, 1px -1px 0 #2684ff, -1px 1px 0 #2684ff,
+    1px 1px 0 #2684ff;
+
+  background-image: url(${tracks});
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
 `;

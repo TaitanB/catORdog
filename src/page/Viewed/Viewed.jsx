@@ -4,7 +4,7 @@ import { FaArrowUp } from 'react-icons/fa';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import Pet from '../../components/Pet/Pet';
 
-import { ViewedList, ViewedTitle, ViewedUp } from './Viewed.styled';
+import { ViewedList, ViewedTitle, ViewedUp, NoViewed } from './Viewed.styled';
 
 export default function Viewed() {
   const [viewed, setViewed] = useLocalStorage('Viewed', []);
@@ -40,7 +40,9 @@ export default function Viewed() {
       <ViewedTitle>Your viewed pets</ViewedTitle>
       <ViewedList>
         {viewed.length === 0 ? (
-          <div>You have not yet viewed information about any pets</div>
+          <NoViewed>
+            You have not yet viewed information about any pets
+          </NoViewed>
         ) : (
           petsViewed.map(pet => (
             <li key={pet.id}>
