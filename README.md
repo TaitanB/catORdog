@@ -21,8 +21,8 @@
 <li>styled-components</li>
 </ul>
 
-![home](assets/select.jpg)
+![select](assets/select.jpg)
 
-![home](assets/favorites.jpg)
+![favorites](assets/favorites.jpg)
 
-![home](assets/viewed.jpg)
+![viewed](assets/viewed.jpg)
